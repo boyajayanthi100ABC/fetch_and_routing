@@ -29,6 +29,7 @@ class BlogsList extends Component {
       avatarUrl: eachItem.avatar_url,
       author: eachItem.author,
       topic: eachItem.topic,
+      content: eachItem.content,
     }))
     this.setState({blogsData: formattedData, isLoading: false})
   }

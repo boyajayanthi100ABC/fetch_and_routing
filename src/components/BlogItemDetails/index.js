@@ -17,7 +17,7 @@ class BlogItemDetails extends Component {
     const {params} = match
     const {id} = params
 
-    const response = await fetch('https://apis.ccbp.in/blogs')
+    const response = await fetch(`https://apis.ccbp.in/blogs/${id}`)
     const data = await response.json()
 
     const updatedData = {
@@ -32,7 +32,7 @@ class BlogItemDetails extends Component {
 
   renderBlogItemDetails = () => {
     const {blogData} = this.state
-    const {title, imageUrl, avatarUrl, author, topic} = blogData
+    const {title, imageUrl, avatarUrl, author, topic, content} = blogData
 
     return (
       <div className="blog-info">
@@ -40,6 +40,7 @@ class BlogItemDetails extends Component {
         <div className="author-details">
           <img className="author-pic" src={avatarUrl} alt={author} />
           <p className="details-author-name">{author}</p>
+          <p className="details-author-name"> {content} </p>
         </div>
         <img className="blog-image" src={imageUrl} alt={title} />
         <p className="blog-content">{topic}</p>

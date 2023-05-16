@@ -4,6 +4,7 @@ import Header from './components/Header'
 import About from './components/About'
 import NotFound from './components/NotFound'
 import Contact from './components/Contact'
+import BlogList from './components/BlogList'
 
 import Home from './components/Home'
 import BlogItemDetails from './components/BlogItemDetails'
@@ -18,6 +19,7 @@ const App = () => (
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
+          <Route path="/blogs/:id" component={BlogItemDetails} />
           <Route component={NotFound} />
         </Switch>
       </div>
